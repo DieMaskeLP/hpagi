@@ -141,23 +141,62 @@ public class NeuralNetwork {
 		return this;
 	}
 
-	public NeuralNetwork setInputNeurons(int size) {
+	public NeuralNetwork addInputNeurons(int size) {
 		for(int i = 0; i < size; i++) {
 			this.inputNeurons.add(new InputNeuron());
 		}
 		return this;
 	}
 
-	public NeuralNetwork setHiddenNeurons(int size) {
+	public NeuralNetwork addHiddenNeurons(int size) {
 		for(int i = 0; i < size; i++) {
 			this.hiddenNeurons.add(new HiddenNeuron());
 		}
 		return this;
 	}
 	
-	public NeuralNetwork setOutputNeurons(int size) {
+	public NeuralNetwork addOutputNeurons(int size) {
 		for(int i = 0; i < size; i++) {
 			this.outputNeurons.add(new OutputNeuron());
+		}
+		return this;
+	}
+
+	public NeuralNetwork setInputNeurons(int size) {
+		if (size > this.inputNeurons.size()){
+			for(int i = 0; i < size; i++) {
+				this.inputNeurons.remove(i);
+			}
+		} else {
+			for(int i = 0; i < size; i++) {
+				this.inputNeurons.add(new InputNeuron());
+			}
+		}
+		return this;
+	}
+
+	public NeuralNetwork setHiddenNeurons(int size) {
+		if (size > this.hiddenNeurons.size()){
+			for(int i = 0; i < size; i++) {
+				this.hiddenNeurons.remove(i);
+			}
+		} else {
+			for(int i = 0; i < size; i++) {
+				this.hiddenNeurons.add(new HiddenNeuron());
+			}
+		}
+		return this;
+	}
+
+	public NeuralNetwork setOutputNeurons(int size) {
+		if (size > this.outputNeurons.size()){
+			for(int i = 0; i < size; i++) {
+				this.outputNeurons.remove(i);
+			}
+		} else {
+			for(int i = 0; i < size; i++) {
+				this.outputNeurons.add(new OutputNeuron());
+			}
 		}
 		return this;
 	}
