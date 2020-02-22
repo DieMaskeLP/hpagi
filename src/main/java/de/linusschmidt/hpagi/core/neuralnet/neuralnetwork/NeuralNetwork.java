@@ -163,7 +163,7 @@ public class NeuralNetwork {
 	}
 
 	public NeuralNetwork setInputNeurons(int size) {
-		if (size > this.inputNeurons.size()){
+		if (size < this.inputNeurons.size()){
 			for(int i = 0; i < size; i++) {
 				this.inputNeurons.remove(i);
 			}
@@ -176,7 +176,7 @@ public class NeuralNetwork {
 	}
 
 	public NeuralNetwork setHiddenNeurons(int size) {
-		if (size > this.hiddenNeurons.size()){
+		if (size < this.hiddenNeurons.size()){
 			for(int i = 0; i < size; i++) {
 				this.hiddenNeurons.remove(i);
 			}
@@ -189,7 +189,7 @@ public class NeuralNetwork {
 	}
 
 	public NeuralNetwork setOutputNeurons(int size) {
-		if (size > this.outputNeurons.size()){
+		if (size < this.outputNeurons.size()){
 			for(int i = 0; i < size; i++) {
 				this.outputNeurons.remove(i);
 			}
